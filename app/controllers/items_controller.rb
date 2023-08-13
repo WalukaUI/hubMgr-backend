@@ -15,8 +15,6 @@ class ItemsController < ApplicationController
 
   # POST /items
   def create
-    puts "woooo"
-    puts "item_params"
     @item = Item.new(item_params)
 
     if @item.save
@@ -49,6 +47,6 @@ class ItemsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_params
-      params.require(:item).permit(:name, :keyword, :shelf_num, :level_num, :bin_num, :other_info, :target_img_path, :availability)
+      params.require(:item).permit(:name, :keyword, :shelf_num, :level_num, :bin_num, :other_info, :target_img_path, :availability, :url)
     end
 end
